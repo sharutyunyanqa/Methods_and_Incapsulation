@@ -58,7 +58,7 @@ public class RadioTest {
     public void testPrevChannelIfItsZero(){
         Radio chan= new Radio();
         chan.setChannel(0);
-        testPrevChannel();
+        chan.prevChannel();
         int expected=9;
         int actual= chan.getChannel();
         Assertions.assertEquals(expected,actual);
@@ -68,7 +68,7 @@ public class RadioTest {
     public void testPrevChannelIfItsOne(){
         Radio chan= new Radio();
         chan.setChannel(1);
-        testPrevChannel();
+        chan.prevChannel();
         int expected=0;
         int actual=chan.getChannel();
         Assertions.assertEquals(expected,actual);
