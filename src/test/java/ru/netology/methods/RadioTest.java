@@ -73,6 +73,5 @@ public class RadioTest {
         int actual=chan.getChannel();
         Assertions.assertEquals(expected,actual);
     }
-    @Test
 }
 
