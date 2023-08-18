@@ -15,7 +15,7 @@ public class Radio {
     public void prevChannel() {
         channel--;
         if (channel < 0) {
-            channel +=10;
+            channel += 10;
         }
     }
 
