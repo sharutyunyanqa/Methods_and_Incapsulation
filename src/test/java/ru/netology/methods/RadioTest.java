@@ -7,6 +7,14 @@ import java.nio.channels.Channel;
 
 public class RadioTest {
     @Test
+    public void shouldTestMaxChannel(){
+        Radio chan= new Radio(15);
+        chan.setChannel(12);
+        int expected = 12;
+        int actual = chan.getChannel();
+        Assertions.assertEquals(expected, actual);
+    }
+    @Test
     public void shouldTestSetChannel() {
         Radio chan = new Radio();
         chan.setChannel(5);

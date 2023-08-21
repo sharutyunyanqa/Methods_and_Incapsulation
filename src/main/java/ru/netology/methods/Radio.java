@@ -3,10 +3,18 @@ package ru.netology.methods;
 public class Radio {
     private int channel;
     private int volume;
+    private int MaxChannel;
+
+    public Radio(){
+    this.MaxChannel=9;
+    }
+    public Radio(int channelsCount){
+    this.MaxChannel=channelsCount-1;
+    }
 
     public void nextChannel() {
         channel++;
-        if (channel > 9) {
+        if (channel > MaxChannel) {
             channel -= 10;
         }
 
@@ -20,7 +28,7 @@ public class Radio {
     }
 
     public void setChannel(int userChannel) {
-        if (userChannel > 9) {
+        if (userChannel > MaxChannel) {
             userChannel = 9;
         }
         if (userChannel < 0) {
