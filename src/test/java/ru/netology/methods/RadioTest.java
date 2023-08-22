@@ -1,4 +1,4 @@
-addpackage ru.netology.methods;
+package ru.netology.methods;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
