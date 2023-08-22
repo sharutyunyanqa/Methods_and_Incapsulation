@@ -1,4 +1,4 @@
-package ru.netology.methods;
+addpackage ru.netology.methods;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -7,13 +7,14 @@ import java.nio.channels.Channel;
 
 public class RadioTest {
     @Test
-    public void shouldTestMaxChannel(){
-        Radio chan= new Radio(15);
+    public void shouldTestMaxChannel() {
+        Radio chan = new Radio(15);
         chan.setChannel(12);
         int expected = 12;
         int actual = chan.getChannel();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldTestSetChannel() {
         Radio chan = new Radio();
@@ -101,6 +102,16 @@ public class RadioTest {
     }
 
     @Test
+    public void testNextChannelIfItsMax() {
+        Radio chan = new Radio(15);
+        chan.setChannel(14);
+        chan.nextChannel();
+        int expected = 0;
+        int actual = chan.getChannel();
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
     public void testNextChanIfItsZero() {
         Radio chan = new Radio();
         chan.setChannel(0);
@@ -130,6 +141,16 @@ public class RadioTest {
         int actual = chan.getChannel();
         Assertions.assertEquals(expected, actual);
 
+    }
+
+    @Test
+    public void testPrevChannelIfItsMin() {
+        Radio chan = new Radio(15);
+        chan.setChannel(0);
+        chan.prevChannel();
+        int expected = 14;
+        int actual = chan.getChannel();
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
